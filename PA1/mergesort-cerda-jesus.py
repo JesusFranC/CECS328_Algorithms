@@ -78,16 +78,14 @@ class Solution:
                 R.append(A[mid+j+1])
             for i in range (n1+n2): #This function merges the two lists, in descending order
                 if(len(L) != 0) and (len(R) != 0):
-                    if L[0] >= R[0]:
+                    if L[0] >= R[0]:    #takes larger of two first values
                         A[i+left] = L.pop(0)
                     else:
                         A[i+left] = R.pop(0)
-                elif len(L):
+                elif len(L):            #adds the rest if other list is empty
                     A[i+left] = L.pop(0)
                 elif len(R):
                     A[i+left] = R.pop(0)
-                else:
-                    print("Something has gone wrong!")
             return
         def mergeSort(A: list, left: int, right: int):
             if left < right:
