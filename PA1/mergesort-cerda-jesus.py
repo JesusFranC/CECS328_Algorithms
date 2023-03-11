@@ -76,7 +76,6 @@ class Solution:
                 L.append(A[left+i])
             for j in range(n2):     #Loading Temp array right
                 R.append(A[mid+j+1])
-
             for i in range (n1+n2): #This function merges the two lists, in descending order
                 if(len(L) != 0) and (len(R) != 0):
                     if L[0] >= R[0]:
