@@ -11,8 +11,8 @@
    submission.
 
 
-name: AJ Fahim1
-studentID: 99999999
+name: Jesus Cerda
+studentID: 029148637
 
 assignment:PA1
 '''
@@ -67,7 +67,14 @@ class Solution:
 		st = time.process_time()
 		
     	# your insertion sort algorithm comes here ...
-
+                if !(len(A) == 0 or len(A) == 1):
+                    for i in range(0, len(A)):
+                        key = A[i]
+                        j = i - 1
+                        while (j >= 0) and (A[j] < key):
+                            A[j+1] = A[j]
+                            j = j - 1
+                        A[j+1] = key
 
 
     	# end of insertion sort
