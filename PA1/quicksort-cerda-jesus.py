@@ -66,7 +66,7 @@ class Solution:
         st = time.process_time()
         
         # your quicksort algorithm comes here ...
-        def swapInList(A: list, x: int, y: int):
+        def swapInList(A: list, x: int, y: int): #literally just swap
             temp = A[x]
             A[x] = A[y]
             A[y] = temp
@@ -85,15 +85,15 @@ class Solution:
             return (i+1)
         def quickSort(A: list, p: int, r: int):
             if(p < r):
-                q = partition(A, p, r)
-                quickSort(A, p, q-1)
-                quickSort(A, q+1, r)
+                q = partition(A, p, r)  #puts the pivot in its correct spot
+                quickSort(A, p, q-1)    #quicksort on left of pivot
+                quickSort(A, q+1, r)    #quicksort on right of pivot
             return
-        def quickSortInit(unsrt: list) -> list:
+        def quickSortInit(unsrt: list) -> list: #This function takes the list and calls quicksort on it
             size = len(unsrt)
-            if (size==0) or (size==1):
+            if (size==0) or (size==1):  #returns the list if its 0 or 1 elements
                 return unsrt
-            else:
+            else:   #calls quicksort if its larger than 1
                 sorted = quickSort(unsrt, 0, size-1)
             return sorted
         output = quickSortInit(query_list)

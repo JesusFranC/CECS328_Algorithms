@@ -88,18 +88,20 @@ class Solution:
                     A[i+left] = R.pop(0)
             return
         def mergeSort(A: list, left: int, right: int):
+            #The function divides the array in 2, then repeats on each half
+            #mid gets counted as part of the left array
             if left < right:
                 mid = math.floor((left + right) / 2)
                 mergeSort(A, left, mid)
                 mergeSort(A, mid+1, right)
-                merge(A, left, mid, right)
+                merge(A, left, mid, right)#the halves should be sorted, they are merged in order
             return
-        def mergeSortInit(unsrt: list) -> list:
+        def mergeSortInit(unsrt: list) -> list:#This function takes the list and calls mergesort on it
             size = len(unsrt)
             if (size==0) or (size==1):
-                return unsrt
+                return unsrt    #returns the list if it's less than 2 elements
             else:
-                sorted = mergeSort(unsrt, 0, size-1)
+                sorted = mergeSort(unsrt, 0, size-1)    #sorts if its larger than 2
             return sorted
         output = mergeSortInit(query_list)
 

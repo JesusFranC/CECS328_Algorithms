@@ -39,9 +39,6 @@ def merge(A: list, left: int, mid: int, right: int):
 A:      The list to be merged
 left:   The left element, as the actual position (ie: 1 is first element)
 right:  The right element, as the actual position (ie: 5 is fifth element)
-
-The function will merge the elements from "left" to "right"
-mid gets counted as part of the left array
 """
 
 def mergeSort(A: list, left: int, right: int):
