@@ -106,4 +106,3 @@ if __name__ == '__main__':
     # the return value is an array of array.
     ret = obj.pa1_insertionsort(input_type, elements_count, seed)
     print(ret)
-
