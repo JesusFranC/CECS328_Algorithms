@@ -17,7 +17,7 @@ def partition(A: list, p: int, r: int) -> int:
     j = p           #j is the first element after the "greater than" sub array
     #loops through the whole section being sorted
     while j < r:
-        if A[j] <= x:
+        if A[j] >= x:
             i = i+1
             swapInList(A, i, j)
         j = j+1
@@ -46,11 +46,9 @@ def quickSortInit(unsrt: list) -> list:
     return sorted
 
 def checkSort(A: list):
-    print(f"{A}")
-    
+    print(f"Unsorted : {A}")
     quickSortInit(A)
-
-    print(f"{A}")
+    print(f"Sorted   : {A}")
     
         
     
