@@ -120,15 +120,16 @@ def testProgram():
     return
 
 def simpleTest():
-    arr = [10,6,2,4,8]
+    arr = [10,6,2,4,8,12]
     print("Array = ",end='')
     print(*arr, sep=", ", end="\n")
-    for i in range(1,6):
+    for i in range(1,len(arr)+1):
         print(f"K = {i}")
         val = kthSmallest(arr, i)
         print(f"Result = {val}\n")
     
 
 if __name__ == '__main__':
-    testProgram()
-    #simpleTest()
+    #testProgram()
+    simpleTest()
+

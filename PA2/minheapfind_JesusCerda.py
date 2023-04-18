@@ -58,16 +58,25 @@ def kthSmallest(rawArr: list, k:int):
         buildMinHeap(arr)
     return val
 
-def simpleTest():
-    arr = [10,6,2,4,8,12]
-    print("Array = ",end='')
-    print(*arr, sep=", ", end="\n")
-    for i in range(1,len(arr)+1):
-        print(f"K = {i}")
-        val = kthSmallest(arr, i)
-        print(f"Result = {val}\n")
 
+
+if __name__ == '__main__':
+
+    # the input type is either a, b or c 
+    # corresponding to function_a, function_b and functin_c.
+    input_type = sys.argv[1]
+
+    elements_count = int(sys.argv[2])
+
+    # input seed as 2, so we have the same randomly 
+    # generated array.
+    # you can change it for your testing.
+    seed = sys.argv[3]
     
+    obj = Solution()
+    # the return value is an array of array.
+    ret = obj.pa1_insertionsort(input_type, elements_count, seed)
+    print(ret)
 
 
 
@@ -81,4 +90,5 @@ def simpleTest():
 
 
 
-    
+
+
