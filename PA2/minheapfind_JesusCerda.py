@@ -5,6 +5,7 @@ studentID: 029148637
 assignment:PA2
 '''
 import math
+import sys
 
 def swapInList(A: list, x: int, y: int):
     temp = A[x]
@@ -57,29 +58,27 @@ def kthSmallest(rawArr: list, k:int):
         val = arr.pop(0)
         buildMinHeap(arr)
     return val
-
-
+        
 
 if __name__ == '__main__':
-
-    # the input type is either a, b or c 
-    # corresponding to function_a, function_b and functin_c.
-    input_type = sys.argv[1]
-
-    elements_count = int(sys.argv[2])
-
-    # input seed as 2, so we have the same randomly 
-    # generated array.
-    # you can change it for your testing.
-    seed = sys.argv[3]
+    #the following code gets the array and the k value when run from command line 
+    array = []
+    data = str(sys.argv[1])
     
-    obj = Solution()
-    # the return value is an array of array.
-    ret = obj.pa1_insertionsort(input_type, elements_count, seed)
-    print(ret)
+    data = data.replace("[", '')
+    data = data.replace("]", '')
 
+    data = data.split(",")   #gets array string from commandline, and cuts it into a list
+    for item in data:
+        array.append(int(item))     #gets every item in the list, and converts it into a list of integers
+    
+    k_val = int(sys.argv[2])        #gets the k value and converts it into an integer
 
-
+    print(kthSmallest(array, k_val))
+        
+"""
+py minheapfind_JesusCerda.py [10,6,2,4,8,12] 3
+"""
 
 
 
